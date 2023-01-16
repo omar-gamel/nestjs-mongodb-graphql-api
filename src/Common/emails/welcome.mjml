@@ -1,0 +1,265 @@
+<mjml>
+  <mj-head>
+    <mj-title>Discount Light</mj-title>
+    <mj-preview>Pre-header Text</mj-preview>
+    <mj-font
+      name="Tahoma"
+      href="https://fonts.googleapis.com/css?family=Tahoma"
+    />
+    <mj-attributes>
+      <mj-all font-family="'Tahoma',sans-serif"></mj-all>
+      <mj-text
+        font-weight="400"
+        font-size="16px"
+        color="#000000"
+        line-height="24px"
+        font-family="'Tahoma', sans-serif"
+      ></mj-text>
+    </mj-attributes>
+    <mj-style inline="inline">
+      .body-section { -webkit-box-shadow: 1px 4px 11px 0px rgba(0, 0, 0, 0.15);
+      -moz-box-shadow: 1px 4px 11px 0px rgba(0, 0, 0, 0.15); box-shadow: 1px 4px
+      11px 0px rgba(0, 0, 0, 0.15); }
+    </mj-style>
+    <mj-style inline="inline">
+      .text-link { color: #5E6EBF } .text-rtl{direction:rtl
+      !important;text-align:right;}
+    </mj-style>
+    <mj-style inline="inline"> .footer-link { color: #888888 } </mj-style>
+  </mj-head>
+  <mj-body background-color="#fff" width="600px">
+    <mj-section
+      full-width="full-width"
+      background-color="#F5F7FA"
+      padding-bottom="30px"
+      padding-top="30px"
+    >
+      <mj-column width="100%">
+        <mj-image
+          src="https://twjeih.com/logo.png"
+          alt=""
+          align="center"
+          width="150px"
+          padding="0"
+        />
+      </mj-column>
+    </mj-section>
+    <mj-section
+      background-url="https://twjeih.com/images/mainHeader.png"
+      background-size="cover"
+      full-width="full-width"
+      padding-top="50px"
+      padding-bottom="50px"
+    >
+      <mj-column width="40%">
+        <mj-image src="https://twjeih.com/images/imgheader.png"></mj-image>
+      </mj-column>
+      <mj-column width="60%">
+        <mj-text
+          color="#fff"
+          padding-top="80px"
+          align="center"
+          font-weight="600"
+          font-size="40px"
+          line-height="24px"
+          font-family="'Tahoma', sans-serif"
+          >...هيـا بنـا نبدأ</mj-text
+        >
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#ffffff" direction="rtl">
+      <mj-column>
+        <mj-text
+          font-size="25px"
+          color="#333333"
+          align="right"
+          font-weight="600"
+          padding-top="40px"
+          css-class="text-rtl"
+          font-family="'Tahoma', sans-serif"
+        >
+          مرحباً , {{user.username}}
+        </mj-text>
+        <mj-text
+          font-size="20px"
+          color="#333333"
+          align="right"
+          font-weight="200"
+          font-family="'Tahoma', sans-serif"
+        >
+          مرحبا بك في أكاديمية ومجتمع توجيه، حيث يمكنك التعلم والمشاركة في طرح
+          نقاشات ممتعة
+        </mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#ffffff">
+      <mj-column width="100%">
+        <mj-button
+          font-family="'Tahoma', sans-serif"
+          border-radius="40px"
+          background-color="#B81C8C"
+          color="white"
+          width="170px"
+          height="30px"
+        >
+          <a
+            href="https://twjeih.com/courses"
+            font-family="'Tahoma', sans-serif"
+            style="
+              display: inline-block;
+              font-size: 20px;
+              color: #fff;
+              text-decoration: none;
+              font-weight: 700;
+            "
+            >ابدأ التعلم</a
+          >
+        </mj-button>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#fff">
+      <mj-column>
+        <mj-text
+          align="right"
+          font-size="20px"
+          padding-bottom="0"
+          font-family="'Tahoma', sans-serif"
+          font-weight="200"
+        >
+          شكرا لك
+        </mj-text>
+        <mj-text
+          align="right"
+          font-size="20px"
+          font-family="'Tahoma', sans-serif"
+          font-weight="200"
+        >
+          فريق توجيه
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <mj-wrapper full-width="full-width" background-color="#F5F7FA">
+      <mj-section>
+        <mj-column width="100%" padding="0">
+          <mj-text
+            align="center"
+            font-size="22px"
+            padding="20px"
+            font-family="'Tahoma', sans-serif"
+            font-weight="700"
+          >
+            تواصل مع توجيه
+          </mj-text>
+          <mj-social
+            font-size="15px"
+            icon-size="30px"
+            mode="horizontal"
+            padding="0"
+            align="center"
+          >
+            {{#if youtubeLink}}
+            <mj-social-element
+              name="youtube-noshare"
+              href="{{{youtubeLink}}}"
+              border-radius="50px"
+            >
+            </mj-social-element>
+            {{/if}} 
+            {{#if twitterLink}}
+            <mj-social-element
+              name="twitter-noshare"
+              href="{{{twitterLink}}}"
+              border-radius="50px"
+            >
+            </mj-social-element>
+            {{/if}} 
+            {{#if facebookLink}}
+            <mj-social-element
+              name="facebook-noshare"
+              href="{{{facebookLink}}}"
+              border-radius="50px"
+            >
+            </mj-social-element>
+            {{/if}} 
+            {{#if linkedinLink}}
+            <mj-social-element
+              name="linkedin-noshare"
+              href="{{{linkedinLink}}}"
+              border-radius="50px"
+            >
+            </mj-social-element>
+            {{/if}} 
+            {{#if instagramLink}}
+            <mj-social-element
+              name="instagram-noshare"
+              href="{{{instagramLink}}}"
+              border-radius="50px"
+            >
+            </mj-social-element>
+            {{/if}}
+          </mj-social>
+          <mj-text
+            color="#445566"
+            font-size="17px"
+            align="center"
+            line-height="16px"
+            padding-top="20px"
+            padding-bottom="0px"
+          >
+            <a
+              href="https://twjeih.com/terms"
+              style="font-weight: 700; color: #008db2; padding:0.5rem 0.2rem;font-size:14px "
+              font-family="'Tahoma', sans-serif"
+              font-weight="400"
+            >
+              شروط الاستخدام
+            </a>
+            <a>|</a>
+            <a
+              href="https://twjeih.com/privacy"
+              style="font-weight: 700; color: #008db2; padding:0.5rem 0.2rem;font-size:14px "
+              font-family="'Tahoma', sans-serif"
+              font-weight="400"
+            >
+              سياسة الخصوصية
+            </a>
+            <a>|</a>
+            <a
+              href="https://twjeih.com/contact"
+              style="font-weight: 700; color: #008db2; padding:0.5rem 0.2rem;font-size:14px "
+              font-weight="400"
+            >
+              اتصل بنا
+            </a>
+          </mj-text>
+          <mj-text
+            color="#445566"
+            font-size="15px"
+            font-weight="700"
+            align="center"
+            font-family="'Tahoma', sans-serif"
+            padding-bottom="0px"
+          >
+              انت تستقبل هذا البريد الإلكتروني لتسجيلك على موقع
+              <a
+                href="https://twjeih.com/"
+                style="color: #b81c8c; text-decoration: none; font-weight: 600"
+                >توجيه</a
+    
+            </p>
+          </mj-text>
+          <mj-text
+            color="#445566"
+            font-size="17px"
+            align="center"
+            line-height="16px"
+            font-weight="700"
+          >
+            &copy; twjeih Inc., all rights reserved.
+          </mj-text>
+        </mj-column>
+      </mj-section>
+    </mj-wrapper>
+  </mj-body>
+</mjml>

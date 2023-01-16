@@ -1,0 +1,187 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type SocialAccount {
+  _id: String!
+  providerId: String!
+  providerName: ProviderNameEnum!
+}
+
+enum ProviderNameEnum {
+  FACEBOOK
+  GMAIL
+  TWITTER
+}
+
+type SocialAccountUrl {
+  _id: String!
+  platFormName: PlatFormNameEnum!
+  url: String!
+}
+
+enum PlatFormNameEnum {
+  GMAIL
+  FACEBOOK
+  TWITTER
+  LINKEDIN
+  INSTAGRAM
+}
+
+type User {
+  _id: String!
+  mailChimpId: String
+  username: String!
+  email: String!
+  country: String!
+  phone: String!
+  password: String!
+  avatar: String!
+  socialAvatar: String!
+  signature: String!
+  bio: String!
+  slug: String!
+  gender: UserGenderEnum!
+  role: UserRoleEnum!
+  isStillInstructorRequest: Boolean!
+  socialAccounts: [SocialAccount!]!
+  isVerified: Boolean!
+  isActive: Boolean!
+  appearOnMainPage: Boolean!
+  rankOnMainPage: Float!
+  friends: User!
+  followers: User!
+  socialAccountsUrls: [SocialAccountUrl!]!
+  workPageUrl: String!
+  categoryName: String!
+  ExperienceYears: Float!
+  cv: String
+  badges: String!
+}
+
+enum UserGenderEnum {
+  MALE
+  FEMALE
+}
+
+enum UserRoleEnum {
+  STUDENT
+  INSTRUCTOR
+  ADMIN
+  ACCOUNTANT
+}
+
+type File {
+  _id: String!
+  name: String!
+  path: String!
+  mimetype: String!
+  size: Float!
+  user: User!
+  downloads: Float!
+  fileType: FileTypeEnum!
+  title: String
+}
+
+enum FileTypeEnum {
+  NORMAL
+  INSTRUCTION
+  CERTIFICATE
+  INSTRUCTOR_REQUEST
+  COURSE_REQUEST
+}
+
+type FilesResonseType {
+  code: Float!
+  message: String!
+  success: Boolean!
+  files: [File!]
+}
+
+type Recipient {
+  _id: String!
+  user: User!
+  isSeen: String!
+}
+
+type UserResonseType {
+  code: Float!
+  message: String!
+  success: Boolean!
+  token: String
+  user: User
+}
+
+type Query {
+  filesBoard(input: FilesBoardInput!): FilesResonseType!
+  instructionFiles: FilesResonseType!
+}
+
+input FilesBoardInput {
+  fileType: FileTypeEnum!
+}
+
+type Mutation {
+  deleteInstructionFileBoard(fileId: String!): FilesResonseType!
+  register(input: RegisterUserInput!): UserResonseType!
+  createUserBoard(input: CreateUserBoardInput!): UserResonseType!
+  registerAsInstructor(input: RegisterAsInstructorInput!): UserResonseType!
+  login(email: String!, password: String!): UserResonseType!
+  socialLoginOrRegister(input: SocialLoginOrRegisterInput!): UserResonseType!
+  verifyUser(token: String!, email: String!): UserResonseType!
+}
+
+input RegisterUserInput {
+  username: String!
+  email: String!
+  password: String!
+  phone: String
+  avatar: String
+}
+
+input CreateUserBoardInput {
+  username: String!
+  email: String!
+  password: String!
+  phone: String
+  avatar: String
+  bio: String
+  country: String
+  appearOnMainPage: Boolean
+  rankOnMainPage: Float
+  isActive: Boolean!
+  role: UserRoleEnum!
+  gender: UserGenderEnum! = MALE
+  socialAccountsUrls: [SocialAccountsUrlsInput!]!
+}
+
+input SocialAccountsUrlsInput {
+  platFormName: PlatFormNameEnum!
+  url: String!
+}
+
+input RegisterAsInstructorInput {
+  username: String!
+  email: String!
+  password: String!
+  phone: String
+  avatar: String
+  bio: String
+  country: String
+  appearOnMainPage: Boolean
+  experienceYears: Int
+  rankOnMainPage: Int
+  cvId: String
+  categoryName: String!
+  workPageUrl: Int
+  gender: UserGenderEnum! = MALE
+  socialAccountsUrls: [SocialAccountsUrlsInput!]!
+}
+
+input SocialLoginOrRegisterInput {
+  providerId: String!
+  providerName: ProviderNameEnum
+  email: String
+  avatar: String
+  username: String
+}
